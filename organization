@@ -1,0 +1,45 @@
+security_camera_project/
+│── configs/                   # Cấu hình tham số, mô hình, vùng cấm
+│   ├── config.yaml            # Thông số hệ thống (FPS, kích thước ảnh, v.v.)
+│   ├── roi_config.json        # Định nghĩa vùng cấm
+│   ├── model_config.yaml      # Cấu hình mô hình AI
+│
+│── data/                      # Dữ liệu hình ảnh và video
+│   ├── raw/                   # Dữ liệu gốc chưa xử lý
+│   ├── processed/             # Dữ liệu đã qua tiền xử lý
+│   ├── database/              # Hình ảnh khuôn mặt của đối tượng đã đăng ký
+│   ├── alerts/                # Hình ảnh các đối tượng không xác định
+│   ├── videos/                # Video ghi lại sự kiện
+│
+│── models/                    # Mô hình AI đã huấn luyện
+│   ├── face_detection/        # Mô hình phát hiện khuôn mặt (MTCNN, RetinaFace)
+│   ├── face_recognition/      # Mô hình nhận diện khuôn mặt (FaceNet, ArcFace)
+│   ├── object_detection/      # Mô hình phát hiện đối tượng (YOLO, Faster R-CNN)
+│   ├── object_tracking/       # Mô hình theo dõi đối tượng (DeepSort, Siamese)
+│
+│── scripts/                   # Các script hỗ trợ
+│   ├── preprocess.py          # Tiền xử lý dữ liệu
+│   ├── train.py               # Huấn luyện mô hình
+│   ├── inference.py           # Chạy dự đoán trên video
+│   ├── alert_system.py        # Kích hoạt cảnh báo khi có đối tượng lạ
+│
+│── src/                       # Code chính của dự án
+│   ├── detection/             # Code phát hiện và theo dõi đối tượng
+│   │   ├── object_detector.py # Phát hiện đối tượng
+│   │   ├── face_detector.py   # Phát hiện khuôn mặt
+│   │   ├── tracker.py         # Theo dõi đối tượng
+│   │
+│   ├── recognition/           # Code nhận diện khuôn mặt
+│   │   ├── face_recognizer.py # Nhận diện khuôn mặt
+│   │   ├── database.py        # Quản lý database đối tượng
+│   │
+│   ├── alert/                 # Code xử lý cảnh báo
+│   │   ├── roi_checker.py     # Kiểm tra vùng cấm
+│   │   ├── alert_manager.py   # Gửi cảnh báo
+│   │
+│   ├── utils/                 # Các hàm tiện ích chung
+│   │   ├── logger.py          # Ghi log hệ thống
+│   │   ├── video_utils.py     # Xử lý video
+│
+│── README.md                  # Hướng dẫn sử dụng dự án
+│── main.py                    # Chạy hệ thống camera

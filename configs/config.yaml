@@ -1,0 +1,12 @@
+metadata:
+  name: "sercurity-camera"
+resolution: "1920x1080"
+fps: 30
+camera_source: "camera_0"
+output_paths: 
+  database: "./data/database"
+  alerts: "./data/alerts"
+  processed: "./data/processed"
+  raw: "./data/raw"
+  videos: "./data/videos"
+existed_time: 15

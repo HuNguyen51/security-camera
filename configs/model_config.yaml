@@ -1,0 +1,30 @@
+object_detection:
+  model_name: "YOLO11"                        # Tên mô hình phát hiện đối tượng
+  weights_path: 
+    pytorch: "./models/object_detection/yolo11m.pt"  # Đường dẫn file weights
+    onnx: "./models/object_detection/yolo11n.onnx"
+  confidence_threshold: 0.4                   # Ngưỡng độ tin cậy
+  nms_threshold: 0.5                          # Ngưỡng cho Non-Maximum Suppression
+
+face_detection:
+  model_name: "MTCNN"                         # Tên mô hình phát hiện khuôn mặt
+  weights_path: ""
+  detection_threshold: 0.4                    # Ngưỡng xác định khuôn mặt
+  image_size: 160
+  margin: 0
+
+face_recognition:
+  model_name: "FaceNet"                       # Tên mô hình nhận diện khuôn mặt
+  weights_path: "vggface2"
+  difference_threshold: 0.4                   # Ngưỡng tương đồng để xác nhận nhận dạng
+  image_size:
+    w: 160
+    h: 160
+
+object_tracking:
+  tracker_type: "DeepSort"                    # Tên tracker sử dụng
+  max_age: 30                                 # Thời gian (số khung hình) cho phép mất tích trước khi xóa ID
+  n_init: 3                                   # Số lần khởi tạo cần thiết trước khi xác định đối tượng thực sự
+
+database_config:
+  database_path: "./data/database"
